@@ -15,6 +15,16 @@
             }, '*');
         });
     </script>
+    <script>
+        let timeout;
+        window.addEventListener('scroll', () => {
+            document.body.classList.add('scrolling');
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                document.body.classList.remove('scrolling');
+            }, 1000); // Скрыть через 1 секунду после остановки прокрутки
+        });
+    </script>
     <style>
         body {
             margin: 0;
@@ -23,25 +33,32 @@
             color: white;
             background: transparent;
             overflow-y: scroll;
+            transition: scrollbar-color 0.5s ease;
         }
 
+        /* Скрытая полоса прокрутки по умолчанию */
         ::-webkit-scrollbar {
             width: 12px;
-            /* более толстый ползунок */
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(192, 192, 192, 0.1);
-            /* почти невидимая нижняя часть */
+            background: transparent;
+            margin: 20px 0;
             border-radius: 12px;
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: rgba(33, 33, 33, 0.5);
-            /* более прозрачный ползунок */
+            background-color: rgba(63, 63, 63, 0.7);
             border-radius: 12px;
-            border: none;
-            /* без обводки */
+            height: 60px;
+            min-height: 40px;
+        }
+
+        /* Видимая полоса прокрутки при прокрутке */
+        body.scrolling ::-webkit-scrollbar {
+            opacity: 1;
         }
 
         .container {

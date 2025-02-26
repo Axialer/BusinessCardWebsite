@@ -86,10 +86,11 @@ body::before {
 
 .center-panel {
     position: relative;
-    width: 95vw;
-    max-width: 1600px;
-    height: auto;
-    aspect-ratio: 1.618; /* Золотое сечение */
+    width: 85%;
+    height: 90vh;
+    max-width: 1200px;
+    aspect-ratio: 1.4;
+    /* Золотое сечение */
     max-height: 90vh;
     min-height: 500px;
     min-width: 800px;
@@ -101,7 +102,8 @@ body::before {
 
 .rectangle-1 {
     position: relative;
-    width: calc(100% - 80px); /* Учитываем ширину navigation-block */
+    width: calc(100% - 80px);
+    /* Учитываем ширину navigation-block */
     height: 100%;
     background: #424242;
     border-radius: 25px;
@@ -114,9 +116,12 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* Было 20px */
-    padding: 30px; /* Было 20px */
-    width: 400px; /* Было 350px */
+    gap: 30px;
+    /* Было 20px */
+    padding: 30px;
+    /* Было 20px */
+    width: 400px;
+    /* Было 350px */
     height: 100%;
 }
 
@@ -128,8 +133,10 @@ body::before {
 }
 
 .avatar {
-    width: 180px; /* Было 150px */
-    height: 180px; /* Было 150px */
+    width: 180px;
+    /* Было 150px */
+    height: 180px;
+    /* Было 150px */
     background: #808080;
     border-radius: 50%;
     overflow: hidden;
@@ -142,7 +149,8 @@ body::before {
     border-radius: 50%;
 }
 
-.name, .profession {
+.name,
+.profession {
     color: white;
     font-size: 24px;
 }
@@ -154,8 +162,10 @@ body::before {
 
 .contact-buttons button,
 .nav-button {
-    width: 64px; /* Было 56px */
-    height: 64px; /* Было 56px */
+    width: 64px;
+    /* Было 56px */
+    height: 64px;
+    /* Было 56px */
     background: #808080;
     border-radius: 12px;
     display: flex;
@@ -210,9 +220,12 @@ iframe {
     width: 80%;
     height: 20%;
     border-radius: 4px;
-    background-color: transparent; /* Прозрачный фон */
-    border: none; /* Убрать обводку */
-    color: transparent; /* Сделать текст прозрачным */
+    background-color: transparent;
+    /* Прозрачный фон */
+    border: none;
+    /* Убрать обводку */
+    color: transparent;
+    /* Сделать текст прозрачным */
     cursor: default;
 }
 
@@ -236,37 +249,56 @@ iframe {
     position: absolute;
     left: 0;
     right: 0;
-    height: 50px; /* Высота градиентов */
-    pointer-events: none; /* Градиенты не должны мешать кликам по iframe */
+    height: 50px;
+    /* Высота градиентов */
+    pointer-events: none;
+    /* Градиенты не должны мешать кликам по iframe */
 }
 
 .gradient-top {
-    top: 0; /* Сверху */
-    background: linear-gradient(to bottom, rgba(28, 28, 28, 1), rgba(28, 28, 28, 0)); /* Темный градиент сверху */
-    z-index: 2; /* На переднем плане */
+    top: 0;
+    /* Сверху */
+    background: linear-gradient(to bottom, rgba(28, 28, 28, 1), rgba(28, 28, 28, 0));
+    /* Темный градиент сверху */
+    z-index: 2;
+    /* На переднем плане */
 }
 
 .gradient-bottom {
-    bottom: 0; /* Снизу */
-    background: linear-gradient(to top, rgba(28, 28, 28, 1), rgba(28, 28, 28, 0)); /* Темный градиент снизу */
-    z-index: 2; /* На переднем плане */
+    bottom: 0;
+    /* Снизу */
+    background: linear-gradient(to top, rgba(28, 28, 28, 1), rgba(28, 28, 28, 0));
+    /* Темный градиент снизу */
+    z-index: 2;
+    /* На переднем плане */
 }
 
 
 /* Параллакс-эффект активен на всем экране */
-html, body, .content, .center-panel, .rectangle-1, .rectangle-2, .rectangle-2, iframe {
+html,
+body,
+.content,
+.center-panel,
+.rectangle-1,
+.rectangle-2,
+.rectangle-2,
+iframe {
     pointer-events: auto;
 }
 
-.wireframe, .parallax-layer, body::before {
+.wireframe,
+.parallax-layer,
+body::before {
     pointer-events: none;
 }
 
-.rectangle-2, iframe {
+.rectangle-2,
+iframe {
     pointer-events: none;
 }
 
-.rectangle-2 *, iframe * {
+.rectangle-2 *,
+iframe * {
     pointer-events: auto;
 }
 
@@ -370,12 +402,13 @@ html, body, .content, .center-panel, .rectangle-1, .rectangle-2, .rectangle-2, i
 }
 
 /* Адаптивные шрифты */
-.name, .profession {
+.name,
+.profession {
     font-size: clamp(18px, 2vh + 1vw, 24px);
 }
 
 /* Респонсивные кнопки */
-.contact-buttons button, 
+.contact-buttons button,
 .nav-button {
     width: clamp(48px, 6vh, 64px);
     height: clamp(48px, 6vh, 64px);
@@ -387,16 +420,17 @@ html, body, .content, .center-panel, .rectangle-1, .rectangle-2, .rectangle-2, i
         aspect-ratio: 21/9;
         max-width: 2000px;
     }
-    
+
     .left-panel {
         width: 500px;
     }
-    
+
     .avatar {
         width: 220px;
         height: 220px;
     }
 }
+
 /* Для маленьких экранов */
 @media (max-width: 1280px) and (max-height: 800px) {
     .center-panel {
@@ -404,9 +438,221 @@ html, body, .content, .center-panel, .rectangle-1, .rectangle-2, .rectangle-2, i
         max-height: 95vh;
         min-height: 400px;
     }
-    
+
     .left-panel {
         width: 300px;
         padding: 15px;
+    }
+}
+
+/* Скрываем мобильные элементы по умолчанию */
+.mobile-menu-toggle,
+.mobile-menu,
+.mobile-menu-overlay {
+    display: none;
+}
+
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    body.menu-open {
+        touch-action: none;
+        overflow: hidden;
+    }
+
+    .wireframe,
+    .content,
+    .center-panel,
+    .rectangle-1,
+    .rectangle-2 {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        max-width: none !important;
+        max-height: none !important;
+    }
+
+    .rectangle-2 iframe {
+        height: 100vh !important;
+    }
+
+    .mobile-menu-toggle,
+    .mobile-menu,
+    .mobile-menu-overlay {
+        display: block;
+    }
+
+    .left-panel,
+    .navigation-block {
+        display: none !important;
+    }
+
+    .center-panel {
+        height: 100vh !important;
+    }
+
+    .mobile-menu-toggle {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        z-index: 1000;
+        width: 48px;
+        height: 48px;
+        background: rgba(66, 66, 66, 0.9);
+        border-radius: 12px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.2s ease, transform 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 90%;
+        max-width: 320px;
+        height: 100vh;
+        background: #424242;
+        z-index: 9999;
+        transition: transform 0.4s ease;
+        padding: 24px 18px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    .mobile-menu.active {
+        transform: translateX(100%);
+    }
+
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 9998;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.4s, visibility 0.4s;
+    }
+
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .mobile-avatar {
+        width: 88px;
+        height: 88px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .mobile-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mobile-nav-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mobile-nav-buttons .nav-button {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 48px;
+        padding: 0 16px;
+        font-size: 16px;
+        color: white;
+        transition: background 0.3s ease;
+    }
+
+    .mobile-nav-buttons .nav-button:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .mobile-nav-buttons .nav-button i {
+        font-size: 20px;
+    }
+
+    .mobile-contact-buttons {
+        padding: 5% 0 10%;
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-contact-buttons a {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: background 0.3s ease;
+    }
+
+    .mobile-contact-buttons a:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Дополнительные адаптации под разные мобильные устройства */
+    @media (max-width: 480px) {
+        .mobile-menu {
+            width: 100%;
+            border-radius: 0;
+        }
+        .mobile-menu-toggle {
+            width: 40px;
+            height: 40px;
+        }
+        .mobile-nav-buttons .nav-button {
+            font-size: 14px;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) {
+        .mobile-menu {
+            width: 80%;
+        }
     }
 }
